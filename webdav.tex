@@ -1,0 +1,13 @@
+Het oorspronkelijke idee van het World Wide Web (WWW) was om bestanden met elkaar te delen en er gezamenlijk aan te kunnen werken. Het werd echter een alleen lezen systeem tot in 1996 Jim Whitehead het W3C overtuigde om een paar sessies te houden over de mogelijkheid van het schrijven van documenten. Daaruit kwam WebDAV voort wat staat voor Web-based Distributed Authoring and Versioning. Kort gezegd komt het erop neer dat WebDAV een protocol is om documenten te schrijven en de voorzien van een versie. Dat versioning bleek echter voor de eerste versie te ingewikkeld en men concentreerde zich op het gezamenlijk werken aan documenten. Later is er alsnog een versioning standaard gekomen.
+
+WebDAV voegt een aantal request methods toe aan HTTP zodat het gebruikt kan worden als bestandssysteem voor lezen en schrijven. De "methodes" die WebDAV toevoegt zijn:
+\begin{enumerate}
+	\item PROPFIND haal de XML properties van een object op. Dit kan ook een complete filesystem tree zijn.
+	\item PROPPATCH wijzig 1 of meer properties van een object in 1 actie
+	\item MKCOL maakt een collectie aan, een collectie kan een map of directory zijn
+	\item COPY kopieert een object van een URI naar een ander
+	\item MOVE hernoemt een object van een URI naar een ander
+	\item LOCK vergrendel een object
+	\item UNLOCK ontgrendel een object
+\end{enumerate}
+De functie om een bestand te schrijven naar een webserver bestond al in de PUT-methode.

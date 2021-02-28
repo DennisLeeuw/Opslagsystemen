@@ -1,0 +1,169 @@
+\documentclass[a4paper,12pt,twoside,openright,titlepage]{book}
+
+%Additional packages
+\usepackage[ascii]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[dutch,english]{babel}
+\usepackage{imakeidx}
+\usepackage{syntonly}
+\usepackage[official]{eurosym}
+%\usepackage[graphicx]
+\usepackage{graphicx}
+\graphicspath{ {./images/} }
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true, linkcolor=blue, citecolor=blue, filecolor=blue, urlcolor=blue, pdftitle=, pdfauthor=, pdfsubject=, pdfkeywords=}
+\usepackage{tabularx}
+\usepackage{scrextend}
+\addtokomafont{labelinglabel}{\sffamily}
+\usepackage{listings}
+\usepackage{adjustbox}
+\usepackage{color}
+
+% Turn on indexing
+\makeindex
+
+% Define colors
+\definecolor{ashgrey}{rgb}{0.7, 0.75, 0.71}
+
+% Listing style
+\lstset{
+  backgroundcolor=\color{ashgrey},   % choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+  basicstyle=\footnotesize,        % the size of the fonts that are used for the code
+  breakatwhitespace=false,         % sets if automatic breaks should only happen at whitespace
+  breaklines=true,                 % sets automatic line breaking
+  extendedchars=true,              % lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+  frame=single,	                   % adds a frame around the code
+  keepspaces=true,                 % keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+  rulecolor=\color{black},         % if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+  showspaces=false,                % show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+}
+
+% Uncomment for production
+% \syntaxonly
+
+% Style
+\pagestyle{headings}
+
+%%%%%%%%%%%%%%%%%%
+% Begin document %
+%%%%%%%%%%%%%%%%%%
+
+% Define document
+\author{D. Leeuw}
+\title{Storage}
+\date{\today\\v.0.1.1}
+
+\begin{document}
+\selectlanguage{dutch}
+
+\maketitle
+
+\copyright\ 2021 Dennis Leeuw\\
+
+\begin{figure}
+\includegraphics[width=0.3\textwidth]{CC-BY-SA-NC.png}
+\end{figure}
+
+\bigskip
+
+\input{CC-licentie}
+
+%%%%%%%%%%%%%%%%%%%
+%%% Introductie %%%
+%%%%%%%%%%%%%%%%%%%
+
+\frontmatter
+\chapter{Over dit Document}
+\input{DocOver}
+\input{DocChanges}
+
+%%%%%%%%%%%%%%%%%
+%%% De inhoud %%%
+%%%%%%%%%%%%%%%%%
+\tableofcontents
+
+\mainmatter
+\chapter{Inleiding}
+\input{introductie}
+
+\chapter{Storage devices}
+\section{Block devices}\index{Block devices}
+\subsection{Harddisks}\index{Harddisks}
+\subsection{SSD - Solid State Drive}\index{SSD}\index{Solid State Drive}
+\subsection{USB-sticks}\index{USB-sticks}
+\subsection{JOBD - Just a Bunch Of Disks}\index{JBOD}\index{Just a Bunch Of Disks}
+\input{jbod}
+\section{interfaces}
+\subsection{IDE - Integrated Drive Electronics}\index{IDE}\index{Integrated Drive Electronics}\index{PATA}\index{ATA}\index{Parallel Advanced Technology Attachement}
+\subsection{SATA - Serial ATA}\index{SATA}\index{Serial ATA}
+\subsection{SCSI - Small Computer Systems Interface}\index{SCSI}\index{Small Computer Systems Interface}
+\input{scsi}
+\subsection{SAS - Serial Attached SCSI}\index{SAS}\index{Serial Attached SCSI}
+\subsection{USB - Universal Serial Bus}\index{USB}\index{Universal Serial Bus}
+
+\chapter{Bestandssystemen}
+\input{bestandssysteem}
+\section{FAT - File Allocation Table}
+\section{Journaling filesystem}
+
+\chapter{Backup}\index{Backup}
+\section{LTO - Linear Tape Open}\index{LTO}\index{Linear Tape Open}
+
+\chapter{RAID}\index{RAID}
+\input{raid}
+\section{RAID0}\index{RAID0}
+\input{raid0}
+\section{RAID1}\index{RAID1}
+\input{raid1}
+\section{RAID5}\index{RAID5}
+\input{raid5}
+
+\chapter{DAS - Direct Attached Storage}\index{DAS}\index{Direct Attached Storage}
+\input{das}
+
+\chapter{SAN - Storage Attached Network}\index{SAN}\index{Storage Attached Network}
+\input{san}
+\section{iSCSI}\index{iSCSI}
+\input{iscsi}
+\section{Fibre Channel}\index{Fibre Channel}
+\input{fibrechannel}
+
+\chapter{Network Fileserver}
+\input{fileserver}
+\section{NFS - Network File System}\index{NFS}
+\input{nfs}
+\subsection{Security}
+\input{nfs-security}
+\subsection{Interoperability}
+\input{nfs-interoperability}
+\section{SMB - Server Message Block}\index{SMB}
+\input{smb}
+\subsection{Security}
+\input{smb-security}
+\subsection{Interoperability}
+\input{smb-interoperability}
+\subsection{Roaming profiles}\index{Roaming profiles}
+\section{NAS - Network Attached Storage}
+\input{nas}
+
+\chapter{Object Storage}\index{Object storage}
+\input{objectstorage}
+
+\chapter{Web storage}\index{Web storage}
+\input{webstorage}
+\section{webdav}\index{Webdav}
+\input{webdav}
+\section{Amazon S3 bucket}\index{Amazon S3 bucket}
+\section{Google Drive}\index{Google drive}
+\section{One Drive \& Microsoft Azure BLOB}\index{One drive}\index{Azure BLOB}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%% Index and End %%%
+%%%%%%%%%%%%%%%%%%%%%
+%\backmatter
+\printindex
+\end{document}
+
+%%% Last line %%%

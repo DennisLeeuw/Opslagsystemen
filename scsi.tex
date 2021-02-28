@@ -1,0 +1,41 @@
+SCSI is een parallele bus waaraan meerdere apparaten gekoppeld kunnen worden. Hoewel het meest gebruikt voor het aansluiten van opslagsystemen gebruikte bijvoorbeeld de Apple Macintosh deze interface in de jaren '80 en '90 ook om scanners en printers aan te sturen. De interface kan zowel intern als extern gebruikt worden om devices aan te sluiten op de HBA (Host Bus Adapter). De interne kabel was meestal een ribbon-kabel en de externe kabels waren meestal rond. In tegen stelling tot IDE kent SCSI een command-language waarmee de HBA kan communiceren met de aansloten apparaten.
+
+Op een SCSI-bus worden de apparaten aan elkaar doorgelust, een zogenaamde daisy-chain (madeliefjes-ketting).
+
+De SCSI bus moet getermineerd worden aan beide einden van de bus. Dus het eerste en het laatste device op de bus moeten voorzien zijn van een terminator (weerstandsblok). Dit kan gedaan worden door een terminator aan te sluiten, maar de meeste apparaten hebben ook een schakelaar waarmee de terminatie ge-enabled wordt.
+
+SCSI kent verschillende standaarden die in de loop van de tijd zijn ontwikkeld en behalve voor SCSI-1 is er voor elke variant een "normale" en een "wide" variant. De normale-variant heeft IDs tussen 0 en 7 en de wide-variant heeft IDs tussen 0 en 15. De hoogste prioriteit op de SCSI-bus is ID 7, de HBA heeft meestal dit ID. De prioriteit loopt daarna af van 6 naar 0 en van 15 naar 8.
+
+De traagste variant van SCSI maakt gebruik van de Single Ended (SE) techniek. Deze variant kan gemixed worden met de Low Voltage Differential (LVD) techniek, maar dan neemt de performance van de gehele bus af. LVD is de meest gebruikte techniek. De High Voltage Differential kan niet gemixed worden met de overige twee technieken, maar kan wel langere afstanden overbruggen dan de overige twee.
+
+\begin{center}
+\begin{tabular}{ |c|c|c|c|c|c|c| } 
+ \hline
+ Standard & Name & Bus width & Speed & SE & LVD & HVD \\
+  & &(bits) & (MBps) & (m) & (m) & (m) \\
+ \hline\hline
+ SCSI-1 & SCSI-1 & 8 & 5 & 6 & - & 25 \\
+ \hline
+ SCSI-2 & Fast SCSI & 8 & 10 & 3 & - & 25 \\
+ \hline
+        & Fast-Wide SCSI & 16 & 20 & 3 & - & 25 \\
+ \hline
+ SCSI-3 & Ultra SCSI & 8 & 20 & 1.5 & - & 25 \\
+ \hline
+        & Ultra wide SCSI & 16 & 40 & - & - & 25 \\
+ \hline
+        & Ultra2 SCSI & 8 & 40 & - & 12 & 25 \\
+ \hline
+        & Ultra2 wide SCSI & 16 & 80 & - & 12 & 25 \\
+ \hline
+        & Ultra3 & 16 & 160 & - & 12 & - \\
+        & Ultra 160 SCSI &  &  &  &  &  \\
+ \hline
+        & Ultra 320 SCSI & 16 & 320 & - & 12 & - \\
+ \hline
+\end{tabular}
+\end{center}
+
+SCSI kent een enorme variatie in connectoren.
+
+FIXME: Connectoren CKP
