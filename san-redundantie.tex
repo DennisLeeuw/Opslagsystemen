@@ -1,0 +1,17 @@
+Een van de belangrijkste criteria bij het bouwen van een SAN is de redundantie. Servers kunnen stuk, switches kunnen stuk, disken kunnen uitvallen en kabels kunnen kapot gaan. Het is dus noodzakelijk dat elke verbinding minimaal dubbel is uitgevoerd. Dat betekend voor de switches in een SAN dat er minimaal twee moeten zijn die kruislings met de opslagsystemen verbonden zijn (zie \ref{SAN_cross}).
+
+\begin{figure}[h!]
+	\includegraphics{san_cross.png}
+	\caption{SAN Cross connected storage}
+	\label{SAN_cross}
+\end{figure}
+
+De opslagsystemen en het SAN netwerk zijn op deze manier volledig redundant uitgevoerd. Als we willen dat gebruikers ook veilig bij hun systemen kunnen dan moeten we de frontend servers (meestal fileservers) ook redundant uitvoeren. Dus ook de servers moeten kruislings worden aangesloten (zie \ref{SAN_cross_FS}).
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{san_cross_FS.png}
+	\caption{SAN Cross connected File Servers}
+	\label{SAN_cross_FS}
+\end{figure}
+
+

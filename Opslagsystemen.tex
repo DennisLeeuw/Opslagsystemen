@@ -19,6 +19,10 @@
 \usepackage{listings}
 \usepackage{adjustbox}
 \usepackage{color}
+\usepackage{mathpazo,amsmath}
+
+%define inch
+\def\inch#1{#1''}
 
 % Turn on indexing
 \makeindex
@@ -119,15 +123,9 @@
 \section{RAID5}\index{RAID5}
 \input{raid5}
 
-\chapter{DAS - Direct Attached Storage}\index{DAS}\index{Direct Attached Storage}
+% FIXME ... waar hoort dit thuis?
+\chapter{DAS en JBOD}\index{DAS}\index{Direct Attached Storage}\index{JBOD}\index{Just a Bunch Of Disks}
 \input{das}
-
-\chapter{SAN - Storage Attached Network}\index{SAN}\index{Storage Attached Network}
-\input{san}
-\section{iSCSI}\index{iSCSI}
-\input{iscsi}
-\section{Fibre Channel}\index{Fibre Channel}
-\input{fibrechannel}
 
 \chapter{Network Fileserver}
 \input{fileserver}
@@ -147,7 +145,18 @@
 \section{NAS - Network Attached Storage}
 \input{nas}
 \subsection{Opdracht - TrueNAS}
-\input{nas-opdracht}
+\input{nas_opdracht}
+\section{Failover in a Heartbeat}
+\input{fs-failover}
+
+\chapter{SAN - Storage Attached Network}\index{SAN}\index{Storage Attached Network}
+\input{san}
+\section{Redunantie}
+\input{san-redundantie.tex}
+\section{Fibre Channel}\index{Fibre Channel}
+\input{fibrechannel}
+\section{iSCSI}\index{iSCSI}
+\input{iscsi}
 
 \chapter{Object Storage}\index{Object storage}
 \input{objectstorage}

@@ -1,0 +1,11 @@
+Om te zorgen dat bestanden ook beschikbaar zijn als een server uit valt is het noodzakelijk om een systeem reduntant (dubbel) uit te voeren. Als dan de ene file server uit valt kan de andere zijn  functie overnemen. De vraag is hoe de gebruiker, of beter hoe het systeem van de gebruiker, weet dat hij de server die hij gebruikte er niet meer is en hij gebruik moet maken van het vervangende systeem.
+
+Binnen IP netwerken wordt dat gedaan door gebruik te maken van een zogenaamd virtueel IP adres. Je kan meer dan \'e\'en IP adres toewijzen aan een netwerkkaart en dat is precies wat we gebruiken om failover te bereiken. We hebben 2 file servers die ieder hun eigen IP adres hebben en er is een IP adres dat ze "delen". Zolang er niets aan de hand is heeft \'e\'en van de file servers ook het virtuele IP adres op zijn netwerk interface, dus deze server heeft op \'e\'en netwerkkaart 2 IP adressen. Het virtuele IP adres is was wat de gebruikers gebruiken om naar de file server te verbinden. Als er een storing optreedt in server 1 dan merkt server 2 dat. Server 2 zet dan het virtuele IP adres op zijn netwerkkaart en alle vragen om bestanden komen bij server 2 uit (zie \ref{FS_failover}).
+
+\begin{figure}[h!]
+	\includegraphics[width=\linewidth]{fs_failover.png}
+	\caption{File Server Failover}
+	\label{FS_failover}
+\end{figure}
+
+Twee dingen zijn hierbij van belang, namelijk dat de data op server 1 gelijk is aan die op server 2. In figuur \ref{FS_failover} synchroniseren server 1 en 2 over een (rode) ethernet cross-cable, op deze manier verstoort de syncronisatie niet de bandbreedte naar de gebruikers. Het andere dat van belang is is dat server 2 moet weten wanneer server 1 niet meer bereikbaar is. Dat laatste wordt bereikt met een heartbeat, zeg maar een soort ping waarbij de servers elkaar in de gaten houden. Als server 2 de heartbeat van server 1 niet meer hoort dan neemt het virtuele IP adres over. De heartbeat kan over een speciale kabel gaan of over de al bestaande netwerken tussen de twee servers.
