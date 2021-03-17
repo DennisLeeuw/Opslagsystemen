@@ -4,7 +4,6 @@
 \usepackage[ascii]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[dutch,english]{babel}
-\usepackage{imakeidx}
 \usepackage{syntonly}
 \usepackage[official]{eurosym}
 %\usepackage[graphicx]
@@ -19,12 +18,13 @@
 \usepackage{listings}
 \usepackage{adjustbox}
 \usepackage{color}
-\usepackage{mathpazo,amsmath}
 
 %define inch
+\usepackage{mathpazo,amsmath}
 \def\inch#1{#1''}
 
 % Turn on indexing
+\usepackage{imakeidx}
 \makeindex
 
 % Define colors
@@ -79,8 +79,8 @@
 
 \frontmatter
 \chapter{Over dit Document}
-\input{DocOver}
-\input{DocChanges}
+\input{src/DocOver}
+\input{src/DocChanges}
 
 %%%%%%%%%%%%%%%%%
 %%% De inhoud %%%
@@ -89,7 +89,7 @@
 
 \mainmatter
 \chapter{Inleiding}
-\input{introductie}
+\input{src/introductie}
 
 \chapter{Storage devices}
 \section{Block devices}\index{Block devices}
@@ -97,17 +97,17 @@
 \subsection{SSD - Solid State Drive}\index{SSD}\index{Solid State Drive}
 \subsection{USB-sticks}\index{USB-sticks}
 \subsection{JOBD - Just a Bunch Of Disks}\index{JBOD}\index{Just a Bunch Of Disks}
-\input{jbod}
+\input{src/jbod}
 \section{interfaces}
 \subsection{IDE - Integrated Drive Electronics}\index{IDE}\index{Integrated Drive Electronics}\index{PATA}\index{ATA}\index{Parallel Advanced Technology Attachement}
 \subsection{SATA - Serial ATA}\index{SATA}\index{Serial ATA}
 \subsection{SCSI - Small Computer Systems Interface}\index{SCSI}\index{Small Computer Systems Interface}
-\input{scsi}
+\input{src/scsi}
 \subsection{SAS - Serial Attached SCSI}\index{SAS}\index{Serial Attached SCSI}
 \subsection{USB - Universal Serial Bus}\index{USB}\index{Universal Serial Bus}
 
 \chapter{Bestandssystemen}
-\input{bestandssysteem}
+\input{src/bestandssysteem}
 \section{FAT - File Allocation Table}
 \section{Journaling filesystem}
 
@@ -115,56 +115,56 @@
 \section{LTO - Linear Tape Open}\index{LTO}\index{Linear Tape Open}
 
 \chapter{RAID}\index{RAID}
-\input{raid}
+\input{src/raid}
 \section{RAID0}\index{RAID0}
-\input{raid0}
+\input{src/raid0}
 \section{RAID1}\index{RAID1}
-\input{raid1}
+\input{src/raid1}
 \section{RAID5}\index{RAID5}
-\input{raid5}
+\input{src/raid5}
 
 % FIXME ... waar hoort dit thuis?
 \chapter{DAS en JBOD}\index{DAS}\index{Direct Attached Storage}\index{JBOD}\index{Just a Bunch Of Disks}
-\input{das}
+\input{src/das}
 
 \chapter{Network Fileserver}
-\input{fileserver}
+\input{src/fileserver}
 \section{NFS - Network File System}\index{NFS}
-\input{nfs}
+\input{src/nfs}
 \subsection{Security}
-\input{nfs-security}
+\input{src/nfs-security}
 \subsection{Interoperability}
-\input{nfs-interoperability}
+\input{src/nfs-interoperability}
 \section{SMB - Server Message Block}\index{SMB}
-\input{smb}
+\input{src/smb}
 \subsection{Security}
-\input{smb-security}
+\input{src/smb-security}
 \subsection{Interoperability}
-\input{smb-interoperability}
+\input{src/smb-interoperability}
 \subsection{Roaming profiles}\index{Roaming profiles}
 \section{NAS - Network Attached Storage}
-\input{nas}
+\input{src/nas}
 \subsection{Opdracht - TrueNAS}
-\input{nas_opdracht}
+\input{src/nas_opdracht}
 \section{Failover in a Heartbeat}
-\input{fs-failover}
+\input{src/fs-failover}
 
 \chapter{SAN - Storage Attached Network}\index{SAN}\index{Storage Attached Network}
-\input{san}
+\input{src/san}
 \section{Redunantie}
-\input{san-redundantie.tex}
+\input{src/san-redundantie.tex}
 \section{Fibre Channel}\index{Fibre Channel}
-\input{fibrechannel}
+\input{src/fibrechannel}
 \section{iSCSI}\index{iSCSI}
-\input{iscsi}
+\input{src/iscsi}
 
 \chapter{Object Storage}\index{Object storage}
-\input{objectstorage}
+\input{src/objectstorage}
 
 \chapter{Web storage}\index{Web storage}
-\input{webstorage}
+\input{src/webstorage}
 \section{webdav}\index{Webdav}
-\input{webdav}
+\input{src/webdav}
 \section{Amazon S3 bucket}\index{Amazon S3 bucket}
 \section{Google Drive}\index{Google drive}
 \section{One Drive \& Microsoft Azure BLOB}\index{One drive}\index{Azure BLOB}
